@@ -1,7 +1,7 @@
-# vkuruganti.github.io
-Vas Kuruganti
-
 # Vas Kuruganti
+### System & Software Architect · AI Infrastructure · Distributed Systems
+
+ *Building the systems that make intelligent systems possible.*
 
 ## About
 Experienced engineer and Architect specializing in AI agents, distributed systems, cloud infrastructure, and large-scale platform reliability. Passionate about building scalable systems, solving complex infrastructure problems, and enabling high-performance computing environments.
