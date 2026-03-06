@@ -4,7 +4,7 @@ Vas Kuruganti
 # Vas Kuruganti
 
 ## About
-Experienced engineer specializing in distributed systems, cloud infrastructure, and large-scale platform reliability. Passionate about building scalable systems, solving complex infrastructure problems, and enabling high-performance computing environments.
+Experienced engineer and Architect specializing in AI agents, distributed systems, cloud infrastructure, and large-scale platform reliability. Passionate about building scalable systems, solving complex infrastructure problems, and enabling high-performance computing environments.
 
 Currently working at **Broadcom**, contributing to infrastructure and platform engineering initiatives.
 
