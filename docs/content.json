@@ -50,7 +50,7 @@
     "subhead": "I build the systems that make intelligent systems possible.",
     "copy": "I work across AI development, AgenticAI, AI infrastructure, cloud platforms, site reliability engineering, and software architecture. My focus is simple: build systems that are scalable, observable, resilient, and ready for production.",
     "photo": {
-      "src": "./assets/image.jpg",
+      "src": "./assets/image.png",
       "alt": "Portrait of Vas Kuruganti",
       "caption": "Architecting AI platforms, cloud systems, and production reliability."
     },
