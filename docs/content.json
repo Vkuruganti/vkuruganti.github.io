@@ -42,7 +42,6 @@
   "hero": {
     "eyebrow": "System & Software Architect",
     "headline": [
-      "AgenticAI and AI development.",
       "AI infrastructure.",
       "Distributed systems.",
       "Reliability at scale."
@@ -137,8 +136,8 @@
         "description": "I specialize in building AI/ML systems from scratch—turning annotated data and GPU infrastructure into trained and fine-tuned models, productionizing them through scalable inference platforms, and driving adoption through copilots and agentic AI system",
         "links": [
           {
-            #"label": "See how I think",
-            #"href": "#contact"
+            "label": "See how I think",
+            "href": "#contact"
           }
         ]
       },
