@@ -42,12 +42,13 @@
   "hero": {
     "eyebrow": "System & Software Architect",
     "headline": [
+      "AgenticAI and AI development.",
       "AI infrastructure.",
       "Distributed systems.",
       "Reliability at scale."
     ],
     "subhead": "I build the systems that make intelligent systems possible.",
-    "copy": "I work across AI infrastructure, cloud platforms, site reliability engineering, and software architecture. My focus is simple: build systems that are scalable, observable, resilient, and ready for production.",
+    "copy": "I work across AI development, AgenticAI, AI infrastructure, cloud platforms, site reliability engineering, and software architecture. My focus is simple: build systems that are scalable, observable, resilient, and ready for production.",
     "ctas": [
       {
         "label": "Explore my work",
@@ -64,8 +65,8 @@
     "theme": "light",
     "eyebrow": "About",
     "title": "I design systems where software, infrastructure, and intelligence meet.",
-    "subtitle": "Over fifteen years, I’ve worked across software engineering, infrastructure architecture, distributed systems, and reliability engineering.",
-    "copy": "My background spans enterprise platforms, cloud-native systems, automation, observability, AI development, and production infrastructure for machine learning workloads. I studied engineering in India and earned a Master of Engineering from Boston University, where I focused on machine learning, signal processing, complex systems, and distributed computing.",
+    "subtitle": "Over fifteen years, I’ve worked across software engineering, Building and training models from Data, AgenticAI, infrastructure architecture, distributed systems, and reliability engineering.",
+    "copy": "My background spans enterprise platforms, cloud-native systems, AgenticAI, automation, observability, AI development, and production infrastructure for machine learning workloads. I studied engineering in India and earned a Master of Engineering from Boston University, where I focused on machine learning, signal processing, complex systems, and distributed computing.",
     "ctas": [
       {
         "label": "See what I build",
@@ -84,7 +85,7 @@
       "eyebrow": "Current focus",
       "title": "Large-scale platforms for AI and the enterprise.",
       "subtitle": "At Broadcom, I design and build distributed AI infrastructure systems, scale AI agents, and improve the reliability and performance of enterprise platforms.",
-      "copy": "My work cuts across system architecture, cloud-native environments, automation, and infrastructure tooling. I collaborate across engineering teams to improve scalability, operational resilience, and performance under real production constraints.",
+      "copy": "My work cuts across AI Engineering, system architecture, cloud-native environments, automation, and infrastructure tooling. I collaborate across engineering teams to improve scalability, operational resilience, and performance under real production constraints.",
       "specs": [
         {
           "title": "AI infrastructure",
@@ -132,12 +133,12 @@
       {
         "eyebrow": "Project",
         "theme": "soft",
-        "title": "Infrastructure automation",
-        "description": "I build automation pipelines that improve deployment quality, increase consistency, and reduce operational friction in large-scale environments.",
+        "title": "AI development",
+        "description": "I specialize in building AI/ML systems from scratch—turning annotated data and GPU infrastructure into trained and fine-tuned models, productionizing them through scalable inference platforms, and driving adoption through copilots and agentic AI system",
         "links": [
           {
-            "label": "See how I think",
-            "href": "#contact"
+            #"label": "See how I think",
+            #"href": "#contact"
           }
         ]
       },
@@ -204,6 +205,12 @@
       {
         "label": "LinkedIn",
         "href": "https://www.linkedin.com/in/vasishta1/",
+        "target": "_blank",
+        "rel": "noreferrer"
+      },
+      {
+        "label": "Medium",
+        "href": "https://medium.com/@vkuruganti",
         "target": "_blank",
         "rel": "noreferrer"
       },
