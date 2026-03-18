@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vas Kuruganti | System & Software Architect</title>
-  <meta name="description" content="Vas Kuruganti builds AI infrastructure, distributed systems, and reliability platforms for production-scale environments." />
+  <meta
+    name="description"
+    content="Vas Kuruganti builds AI infrastructure, distributed systems, and reliability platforms for production-scale environments."
+  />
   <style>
     :root {
       --text: #1d1d1f;
@@ -23,6 +26,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -79,6 +83,63 @@
       text-align: center;
     }
 
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text {
+      text-align: left;
+    }
+
+    .hero-photo-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo-card {
+      position: relative;
+      width: min(100%, 430px);
+      border-radius: 32px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f7f9 100%);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero-photo-card::before {
+      content: "";
+      position: absolute;
+      inset: auto 50% -30px auto;
+      transform: translateX(50%);
+      width: 260px;
+      height: 120px;
+      border-radius: 999px;
+      filter: blur(40px);
+      background: rgba(0, 113, 227, 0.18);
+      z-index: 0;
+    }
+
+    .hero-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-photo-caption {
+      position: relative;
+      z-index: 1;
+      padding: 16px 18px 20px;
+      font-size: 0.95rem;
+      color: var(--muted);
+      text-align: left;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
     .eyebrow {
       color: var(--blue);
       font-weight: 600;
@@ -97,7 +158,7 @@
 
     .hero-subhead {
       max-width: 820px;
-      margin: 20px auto 0;
+      margin: 20px 0 0;
       font-size: clamp(1.15rem, 2.2vw, 1.65rem);
       line-height: 1.35;
       letter-spacing: -0.02em;
@@ -106,7 +167,7 @@
 
     .hero-copy {
       max-width: 780px;
-      margin: 18px auto 0;
+      margin: 18px 0 0;
       color: var(--muted);
       font-size: 1.06rem;
       line-height: 1.65;
@@ -259,6 +320,11 @@
       color: var(--text);
     }
 
+    .tile.silver {
+      background: linear-gradient(180deg, #f7f7fa 0%, #ececf1 100%);
+      color: var(--text);
+    }
+
     .tile-content {
       max-width: 520px;
       position: relative;
@@ -313,7 +379,8 @@
     }
 
     .light .spec,
-    .soft .spec {
+    .soft .spec,
+    .silver .spec {
       background: rgba(255,255,255,0.75);
       border: 1px solid rgba(0,0,0,0.06);
     }
@@ -395,6 +462,12 @@
       line-height: 1.6;
     }
 
+    @media (min-width: 901px) {
+      .cta-row {
+        justify-content: flex-start;
+      }
+    }
+
     @media (max-width: 900px) {
       .tiles {
         grid-template-columns: 1fr;
@@ -407,6 +480,29 @@
 
       .mini-specs {
         grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+
+      .hero-subhead,
+      .hero-copy {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-row {
+        justify-content: center;
+      }
+
+      .hero-photo-wrap {
+        order: 2;
       }
     }
 
@@ -439,7 +535,7 @@
     <section class="hero container" id="hero-root">
       <div class="status-card">
         <h2>Loading content…</h2>
-        <p>This page is now driven by <code>content.json</code>. Save your JSON file next to <code>index.html</code> and the site will render automatically.</p>
+        <p>This page is driven by <code>content.json</code>.</p>
       </div>
     </section>
 
@@ -470,27 +566,30 @@
 
     const ALLOWED_THEMES = new Set(['light', 'dark', 'soft', 'silver']);
 
-    const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, char => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;'
-    }[char]));
+    const escapeHtml = (value = '') =>
+      String(value).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[char]));
 
-    const safeTheme = (value, fallback = 'light') => ALLOWED_THEMES.has(value) ? value : fallback;
+    const safeTheme = (value, fallback = 'light') =>
+      ALLOWED_THEMES.has(value) ? value : fallback;
 
     const renderLink = (link = {}, className = 'link-cta') => {
       const label = escapeHtml(link.label || 'Learn more');
       const href = escapeHtml(link.href || '#');
+      const classAttr = className ? ` class="${className}"` : '';
       const target = link.target ? ` target="${escapeHtml(link.target)}"` : '';
       const rel = link.rel ? ` rel="${escapeHtml(link.rel)}"` : '';
-      return `<a class="${className}" href="${href}"${target}${rel}>${label}</a>`;
+      return `<a${classAttr} href="${href}"${target}${rel}>${label}</a>`;
     };
 
     const renderLinks = (links = [], className = 'cta-row') => {
       if (!Array.isArray(links) || !links.length) return '';
-      return `<div class="${className}">${links.map(link => renderLink(link)).join('')}</div>`;
+      return `<div class="${className}">${links.map((link) => renderLink(link)).join('')}</div>`;
     };
 
     const renderFeatureSection = (section = {}, id = '') => `
@@ -509,7 +608,7 @@
       if (!Array.isArray(specs) || !specs.length) return '';
       return `
         <div class="mini-specs">
-          ${specs.map(spec => `
+          ${specs.map((spec) => `
             <div class="spec">
               <strong>${escapeHtml(spec.title || '')}</strong>
               <span>${escapeHtml(spec.text || '')}</span>
@@ -530,8 +629,6 @@
       </article>
     `;
 
-    const renderSecondaryTile = (tile = {}) => renderProjectTile(tile);
-
     function applyTheme(theme = {}) {
       const root = document.documentElement;
       Object.entries(THEME_MAP).forEach(([jsonKey, cssVar]) => {
@@ -550,10 +647,11 @@
     function renderNav(navigation = {}) {
       const root = document.getElementById('nav-root');
       if (!root) return;
+
       root.innerHTML = `
         <a class="brand" href="#top">${escapeHtml(navigation.brand || 'Portfolio')}</a>
         <div class="nav-links">
-          ${(navigation.links || []).map(link => renderLink(link, '')).join('')}
+          ${(navigation.links || []).map((link) => renderLink(link, '')).join('')}
         </div>
       `;
     }
@@ -561,30 +659,56 @@
     function renderHero(hero = {}) {
       const root = document.getElementById('hero-root');
       if (!root) return;
+
       const headline = Array.isArray(hero.headline)
-        ? hero.headline.map(line => escapeHtml(line)).join('<br />')
+        ? hero.headline.map((line) => escapeHtml(line)).join('<br />')
         : escapeHtml(hero.headline || '');
 
+      const hasPhoto = hero.photo && hero.photo.src;
+
       root.innerHTML = `
-        ${hero.eyebrow ? `<div class="eyebrow">${escapeHtml(hero.eyebrow)}</div>` : ''}
-        ${headline ? `<h1>${headline}</h1>` : ''}
-        ${hero.subhead ? `<p class="hero-subhead">${escapeHtml(hero.subhead)}</p>` : ''}
-        ${hero.copy ? `<p class="hero-copy">${escapeHtml(hero.copy)}</p>` : ''}
-        ${renderLinks(hero.ctas)}
+        <div class="hero-grid">
+          <div class="hero-text">
+            ${hero.eyebrow ? `<div class="eyebrow">${escapeHtml(hero.eyebrow)}</div>` : ''}
+            ${headline ? `<h1>${headline}</h1>` : ''}
+            ${hero.subhead ? `<p class="hero-subhead">${escapeHtml(hero.subhead)}</p>` : ''}
+            ${hero.copy ? `<p class="hero-copy">${escapeHtml(hero.copy)}</p>` : ''}
+            ${renderLinks(hero.ctas)}
+          </div>
+
+          ${hasPhoto ? `
+            <div class="hero-photo-wrap">
+              <div class="hero-photo-card">
+                <img
+                  class="hero-photo"
+                  src="${escapeHtml(hero.photo.src)}"
+                  alt="${escapeHtml(hero.photo.alt || 'Profile photo')}"
+                />
+                ${hero.photo.caption ? `
+                  <div class="hero-photo-caption">
+                    ${escapeHtml(hero.photo.caption)}
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          ` : ''}
+        </div>
       `;
     }
 
     function renderAbout(about = {}) {
       const root = document.getElementById('about-root');
       if (!root) return;
-      root.innerHTML = renderFeatureSection(about, about.id || 'about');
+      if (about.id) root.setAttribute('id', about.id);
+      root.innerHTML = renderFeatureSection(about);
     }
 
     function renderWork(work = {}) {
       const root = document.getElementById('work-root');
       if (!root) return;
+      if (work.id) root.setAttribute('id', work.id);
+
       const feature = work.feature || {};
-      root.id = work.id || 'work-root';
       root.innerHTML = `
         <div class="feature ${safeTheme(feature.theme, 'dark')}">
           <div class="feature-glow"></div>
@@ -596,31 +720,36 @@
             ${renderSpecs(feature.specs)}
           </div>
         </div>
-        ${(work.projects || []).length ? `<div class="tiles">${work.projects.map(renderProjectTile).join('')}</div>` : ''}
+        ${(work.projects || []).length
+          ? `<div class="tiles">${work.projects.map(renderProjectTile).join('')}</div>`
+          : ''}
       `;
-      if (work.id) root.setAttribute('id', work.id);
     }
 
     function renderWriting(writing = {}) {
       const root = document.getElementById('writing-root');
       if (!root) return;
-      root.innerHTML = renderFeatureSection(writing, writing.id || 'writing');
+      if (writing.id) root.setAttribute('id', writing.id);
+      root.innerHTML = renderFeatureSection(writing);
     }
 
     function renderSecondaryTiles(tiles = []) {
       const root = document.getElementById('secondary-tiles-root');
       if (!root) return;
+
       if (!Array.isArray(tiles) || !tiles.length) {
         root.innerHTML = '';
         return;
       }
-      root.innerHTML = `<div class="tiles">${tiles.map(renderSecondaryTile).join('')}</div>`;
+
+      root.innerHTML = `<div class="tiles">${tiles.map(renderProjectTile).join('')}</div>`;
     }
 
     function renderContact(contact = {}) {
       const root = document.getElementById('contact-root');
       if (!root) return;
       if (contact.id) root.setAttribute('id', contact.id);
+
       root.innerHTML = `
         <div class="footer-card">
           ${contact.title ? `<h2>${escapeHtml(contact.title)}</h2>` : ''}
@@ -633,26 +762,31 @@
     function renderError(message) {
       const root = document.getElementById('hero-root');
       if (!root) return;
+
       root.innerHTML = `
         <div class="status-card">
           <h2>Couldn’t load content.json</h2>
           <p>${escapeHtml(message)}</p>
         </div>
       `;
-      ['about-root', 'work-root', 'writing-root', 'secondary-tiles-root', 'contact-root'].forEach(id => {
-        const node = document.getElementById(id);
-        if (node) node.innerHTML = '';
-      });
+
+      ['about-root', 'work-root', 'writing-root', 'secondary-tiles-root', 'contact-root']
+        .forEach((id) => {
+          const node = document.getElementById(id);
+          if (node) node.innerHTML = '';
+        });
     }
 
     async function loadContent() {
       try {
         const response = await fetch('./content.json', { cache: 'no-store' });
+
         if (!response.ok) {
           throw new Error('Make sure content.json is in the same folder as index.html before publishing to GitHub Pages.');
         }
 
         const data = await response.json();
+
         applyTheme(data.theme || {});
         setSiteMeta(data.site || {});
         renderNav(data.navigation || {});
@@ -663,6 +797,7 @@
         renderSecondaryTiles(data.secondaryTiles || []);
         renderContact(data.contact || {});
       } catch (error) {
+        console.error('Failed to load site content:', error);
         renderError(error.message || 'Unknown error while loading content.');
       }
     }
