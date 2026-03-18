@@ -42,7 +42,8 @@
   "hero": {
     "eyebrow": "System & Software Architect",
     "headline": [
-      "AI infrastructure.",
+      "AI Enginering & Infrastructure.",
+      "AgenticAI and AI development.",
       "Distributed systems.",
       "Reliability at scale."
     ],
@@ -87,7 +88,7 @@
       "copy": "My work cuts across AI Engineering, system architecture, cloud-native environments, automation, and infrastructure tooling. I collaborate across engineering teams to improve scalability, operational resilience, and performance under real production constraints.",
       "specs": [
         {
-          "title": "AI infrastructure",
+          "title": "AI Engineering & Infrastructure",
           "text": "Platform design for inference, agents, and production AI systems."
         },
         {
@@ -136,8 +137,8 @@
         "description": "I specialize in building AI/ML systems from scratch—turning annotated data and GPU infrastructure into trained and fine-tuned models, productionizing them through scalable inference platforms, and driving adoption through copilots and agentic AI system",
         "links": [
           {
-            "label": "See how I think",
-            "href": "#contact"
+            #"label": "See how I think",
+            #"href": "#contact"
           }
         ]
       },
