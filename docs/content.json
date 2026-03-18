@@ -1,0 +1,266 @@
+{
+  "site": {
+    "title": "Vas Kuruganti | System & Software Architect",
+    "metaDescription": "Vas Kuruganti builds AI infrastructure, distributed systems, and reliability platforms for production-scale environments.",
+    "footerText": "© 2026 Vas Kuruganti. Built for GitHub Pages."
+  },
+  "theme": {
+    "text": "#1d1d1f",
+    "muted": "#6e6e73",
+    "background": "#f5f5f7",
+    "white": "#ffffff",
+    "dark": "#000000",
+    "darkSoft": "#101114",
+    "blue": "#0071e3",
+    "blueHover": "#0077ed",
+    "border": "rgba(0, 0, 0, 0.08)",
+    "radius": "28px",
+    "maxWidth": "1200px",
+    "shadow": "0 20px 60px rgba(0, 0, 0, 0.08)"
+  },
+  "navigation": {
+    "brand": "Vas Kuruganti",
+    "links": [
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Work",
+        "href": "#work"
+      },
+      {
+        "label": "Writing",
+        "href": "#writing"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "System & Software Architect",
+    "headline": [
+      "AI infrastructure.",
+      "Distributed systems.",
+      "Reliability at scale."
+    ],
+    "subhead": "I build the systems that make intelligent systems possible.",
+    "copy": "I work across AI infrastructure, cloud platforms, site reliability engineering, and software architecture. My focus is simple: build systems that are scalable, observable, resilient, and ready for production.",
+    "ctas": [
+      {
+        "label": "Explore my work",
+        "href": "#work"
+      },
+      {
+        "label": "Get in touch",
+        "href": "#contact"
+      }
+    ]
+  },
+  "about": {
+    "id": "about",
+    "theme": "light",
+    "eyebrow": "About",
+    "title": "I design systems where software, infrastructure, and intelligence meet.",
+    "subtitle": "Over fifteen years, I’ve worked across software engineering, infrastructure architecture, distributed systems, and reliability engineering.",
+    "copy": "My background spans enterprise platforms, cloud-native systems, automation, observability, AI development, and production infrastructure for machine learning workloads. I studied engineering in India and earned a Master of Engineering from Boston University, where I focused on machine learning, signal processing, complex systems, and distributed computing.",
+    "ctas": [
+      {
+        "label": "See what I build",
+        "href": "#work"
+      },
+      {
+        "label": "Read my writing",
+        "href": "#writing"
+      }
+    ]
+  },
+  "work": {
+    "id": "work",
+    "feature": {
+      "theme": "dark",
+      "eyebrow": "Current focus",
+      "title": "Large-scale platforms for AI and the enterprise.",
+      "subtitle": "At Broadcom, I design and build distributed AI infrastructure systems, scale AI agents, and improve the reliability and performance of enterprise platforms.",
+      "copy": "My work cuts across system architecture, cloud-native environments, automation, and infrastructure tooling. I collaborate across engineering teams to improve scalability, operational resilience, and performance under real production constraints.",
+      "specs": [
+        {
+          "title": "AI infrastructure",
+          "text": "Platform design for inference, agents, and production AI systems."
+        },
+        {
+          "title": "Distributed systems",
+          "text": "Architecture for scale, fault tolerance, and operational durability."
+        },
+        {
+          "title": "Reliability engineering",
+          "text": "Observability, triage, autoremediation, and incident reduction."
+        },
+        {
+          "title": "Cloud automation",
+          "text": "Tooling and workflows that make complex platforms easier to run."
+        }
+      ]
+    },
+    "projects": [
+      {
+        "eyebrow": "Project",
+        "theme": "light",
+        "title": "AI development",
+        "description": "As a founding engineer, I built AI systems that used ML inference to support cancer diagnosis. I also helped build reliable platform infrastructure for foundational models and AGI-oriented inference pipelines.",
+        "links": [
+          {
+            "label": "Discuss the work",
+            "href": "#contact"
+          }
+        ]
+      },
+      {
+        "eyebrow": "Project",
+        "theme": "dark",
+        "title": "Platform reliability",
+        "description": "I design monitoring, triage, and autoremediation frameworks that reduce production incidents and improve resilience across distributed systems.",
+        "links": [
+          {
+            "label": "Start a conversation",
+            "href": "#contact"
+          }
+        ]
+      },
+      {
+        "eyebrow": "Project",
+        "theme": "soft",
+        "title": "Infrastructure automation",
+        "description": "I build automation pipelines that improve deployment quality, increase consistency, and reduce operational friction in large-scale environments.",
+        "links": [
+          {
+            "label": "See how I think",
+            "href": "#contact"
+          }
+        ]
+      },
+      {
+        "eyebrow": "Project",
+        "theme": "light",
+        "title": "Cloud platforms for AI",
+        "description": "I architect and scale cloud platforms for AI workloads, enabling high-performance, production-grade inference at scale.",
+        "links": [
+          {
+            "label": "Visit GitHub",
+            "href": "https://github.com/vkuruganti",
+            "target": "_blank",
+            "rel": "noreferrer"
+          }
+        ]
+      }
+    ]
+  },
+  "writing": {
+    "id": "writing",
+    "theme": "silver",
+    "eyebrow": "Writing",
+    "title": "Ideas about platforms, infrastructure, and engineering strategy.",
+    "subtitle": "I write about platform engineering, systems architecture, technical leadership, and the organizational leverage that comes from building the right infrastructure.",
+    "links": [
+      {
+        "label": "Read \"Platform Engineering as an Organizational Strategy\"",
+        "href": "https://medium.com/aws-in-plain-english/platform-engineering-as-an-organizational-strategy-a3123b824612",
+        "target": "_blank",
+        "rel": "noreferrer"
+      },
+      {
+        "label": "Subscribe to The Control Plane",
+        "href": "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7097668391842324480",
+        "target": "_blank",
+        "rel": "noreferrer"
+      }
+    ]
+  },
+  "secondaryTiles": [
+    {
+      "eyebrow": "Skills",
+      "theme": "dark",
+      "title": "Built with modern infrastructure.",
+      "description": "Python, Go, Java, Kubernetes, Docker, AWS, Ansible, Terraform, StackStorm, Prometheus, Grafana, and the systems thinking needed to connect them into something that works."
+    },
+    {
+      "eyebrow": "Interests",
+      "theme": "light",
+      "title": "Focused on what matters next.",
+      "description": "Distributed systems, cloud infrastructure, platform engineering, reliability engineering, and machine learning systems."
+    }
+  ],
+  "contact": {
+    "id": "contact",
+    "title": "Let’s build something that lasts.",
+    "copy": "Reach out if you’re working on AI infrastructure, distributed systems, reliability engineering, platform design, or technical leadership challenges that need both depth and systems thinking.",
+    "links": [
+      {
+        "label": "Email",
+        "href": "mailto:vkuruganti1@gmail.com"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/vasishta1/",
+        "target": "_blank",
+        "rel": "noreferrer"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/vkuruganti",
+        "target": "_blank",
+        "rel": "noreferrer"
+      }
+    ],
+    "details": {
+      "email": "vkuruganti1@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/vasishta1/",
+      "github": "https://github.com/vkuruganti"
+    }
+  },
+  "profile": {
+    "name": "Vas Kuruganti",
+    "role": "System & Software Architect",
+    "tagline": "Building the systems that make intelligent systems possible.",
+    "company": "Broadcom",
+    "experienceYears": "15+",
+    "education": [
+      {
+        "institution": "Boston University",
+        "degree": "Master of Engineering",
+        "specialization": "Machine Learning and Signal Processing"
+      }
+    ],
+    "focusAreas": [
+      "AI infrastructure",
+      "Distributed systems",
+      "Site reliability engineering",
+      "Cloud platforms",
+      "Software architecture",
+      "Automation",
+      "Observability",
+      "Machine learning systems"
+    ],
+    "skills": {
+      "programming": [
+        "Python",
+        "Go",
+        "Java"
+      ],
+      "infrastructure": [
+        "Kubernetes",
+        "Docker",
+        "AWS",
+        "Ansible",
+        "Terraform",
+        "StackStorm"
+      ],
+      "observability": [
+        "Prometheus",
+        "Grafana"
+      ]
+    }
+  }
+}

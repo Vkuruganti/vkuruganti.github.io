@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vas Kuruganti | System & Software Architect</title>
+  <meta name="description" content="Vas Kuruganti builds AI infrastructure, distributed systems, and reliability platforms for production-scale environments." />
+  <style>
+    :root {
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --bg: #f5f5f7;
+      --white: #ffffff;
+      --dark: #000000;
+      --dark-soft: #101114;
+      --blue: #0071e3;
+      --blue-hover: #0077ed;
+      --border: rgba(0, 0, 0, 0.08);
+      --radius: 28px;
+      --max: 1200px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: saturate(180%) blur(20px);
+      background: rgba(245, 245, 247, 0.78);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-inner {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 72px 0 24px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.4rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+    }
+
+    .hero-subhead {
+      max-width: 820px;
+      margin: 20px auto 0;
+      font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .hero-copy {
+      max-width: 780px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.65;
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .link-cta {
+      color: var(--blue);
+      font-size: 1.06rem;
+      font-weight: 500;
+    }
+
+    .link-cta:hover { color: var(--blue-hover); }
+
+    .link-cta::after {
+      content: " ›";
+      font-size: 1.1em;
+    }
+
+    .section {
+      padding: 14px 0;
+    }
+
+    .feature {
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 64px 24px;
+      background: var(--white);
+    }
+
+    .feature.dark {
+      background:
+        radial-gradient(circle at 50% 20%, rgba(70, 85, 120, 0.4), transparent 32%),
+        linear-gradient(180deg, #0a0b0f 0%, #101218 45%, #050507 100%);
+      color: #f5f5f7;
+    }
+
+    .feature.light {
+      background:
+        radial-gradient(circle at 50% 8%, rgba(0, 113, 227, 0.12), transparent 26%),
+        linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+      color: var(--text);
+    }
+
+    .feature.silver {
+      background: linear-gradient(180deg, #f7f7fa 0%, #ececf1 100%);
+      color: var(--text);
+    }
+
+    .feature-content {
+      max-width: 900px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature .eyebrow {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .feature.dark .eyebrow { color: #7fb4ff; }
+
+    .feature-title {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+    }
+
+    .feature-subtitle {
+      margin: 16px auto 0;
+      max-width: 760px;
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      color: inherit;
+      opacity: 0.92;
+    }
+
+    .feature-copy {
+      margin: 16px auto 0;
+      max-width: 760px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: inherit;
+      opacity: 0.76;
+    }
+
+    .feature-glow {
+      position: absolute;
+      inset: auto 50% 80px auto;
+      transform: translateX(50%);
+      width: 520px;
+      height: 220px;
+      border-radius: 999px;
+      filter: blur(55px);
+      background: rgba(0, 113, 227, 0.22);
+      z-index: 1;
+    }
+
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .tile {
+      min-height: 560px;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: center;
+      padding: 44px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .tile.light {
+      background: linear-gradient(180deg, #ffffff 0%, #f7f7f9 100%);
+      color: var(--text);
+    }
+
+    .tile.dark {
+      background:
+        radial-gradient(circle at 50% 15%, rgba(43, 77, 141, 0.38), transparent 28%),
+        linear-gradient(180deg, #131417 0%, #07080b 100%);
+      color: #f5f5f7;
+    }
+
+    .tile.soft {
+      background: linear-gradient(180deg, #eef5ff 0%, #f7fbff 100%);
+      color: var(--text);
+    }
+
+    .tile-content {
+      max-width: 520px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tile .eyebrow {
+      font-size: 0.98rem;
+      margin-bottom: 10px;
+    }
+
+    .tile.dark .eyebrow { color: #8bbcff; }
+
+    .tile h3 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.045em;
+    }
+
+    .tile p {
+      margin: 14px auto 0;
+      max-width: 460px;
+      color: inherit;
+      opacity: 0.78;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .tile-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .mini-specs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+      text-align: left;
+    }
+
+    .spec {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+    }
+
+    .light .spec,
+    .soft .spec {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .spec strong {
+      display: block;
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    .spec span {
+      color: inherit;
+      opacity: 0.72;
+      font-size: 0.92rem;
+      line-height: 1.45;
+    }
+
+    .footer-card {
+      margin: 14px 0 60px;
+      border-radius: 32px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      padding: 44px 24px;
+      text-align: center;
+    }
+
+    .footer-card h2 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .footer-card p {
+      margin: 16px auto 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .fine-print {
+      padding: 18px 0 38px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    .status-card {
+      border-radius: 32px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      padding: 44px 24px;
+      text-align: center;
+      margin: 14px 0;
+    }
+
+    .status-card h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    .status-card p {
+      margin: 14px auto 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .tiles {
+        grid-template-columns: 1fr;
+      }
+
+      .feature,
+      .tile {
+        min-height: auto;
+      }
+
+      .mini-specs {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        min-height: auto;
+        padding: 12px 0;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 14px;
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner" id="nav-root"></div>
+  </nav>
+
+  <main id="top">
+    <section class="hero container" id="hero-root">
+      <div class="status-card">
+        <h2>Loading content…</h2>
+        <p>This page is now driven by <code>content.json</code>. Save your JSON file next to <code>index.html</code> and the site will render automatically.</p>
+      </div>
+    </section>
+
+    <section class="section container" id="about-root"></section>
+    <section class="section container" id="work-root"></section>
+    <section class="section container" id="writing-root"></section>
+    <section class="section container" id="secondary-tiles-root"></section>
+    <section class="section container" id="contact-root"></section>
+  </main>
+
+  <footer class="fine-print" id="footer-root">© 2026 Vas Kuruganti. Built for GitHub Pages.</footer>
+
+  <script>
+    const THEME_MAP = {
+      text: '--text',
+      muted: '--muted',
+      background: '--bg',
+      white: '--white',
+      dark: '--dark',
+      darkSoft: '--dark-soft',
+      blue: '--blue',
+      blueHover: '--blue-hover',
+      border: '--border',
+      radius: '--radius',
+      maxWidth: '--max',
+      shadow: '--shadow'
+    };
+
+    const ALLOWED_THEMES = new Set(['light', 'dark', 'soft', 'silver']);
+
+    const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, char => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[char]));
+
+    const safeTheme = (value, fallback = 'light') => ALLOWED_THEMES.has(value) ? value : fallback;
+
+    const renderLink = (link = {}, className = 'link-cta') => {
+      const label = escapeHtml(link.label || 'Learn more');
+      const href = escapeHtml(link.href || '#');
+      const target = link.target ? ` target="${escapeHtml(link.target)}"` : '';
+      const rel = link.rel ? ` rel="${escapeHtml(link.rel)}"` : '';
+      return `<a class="${className}" href="${href}"${target}${rel}>${label}</a>`;
+    };
+
+    const renderLinks = (links = [], className = 'cta-row') => {
+      if (!Array.isArray(links) || !links.length) return '';
+      return `<div class="${className}">${links.map(link => renderLink(link)).join('')}</div>`;
+    };
+
+    const renderFeatureSection = (section = {}, id = '') => `
+      <div class="feature ${safeTheme(section.theme, 'light')}"${id ? ` id="${escapeHtml(id)}"` : ''}>
+        <div class="feature-content">
+          ${section.eyebrow ? `<div class="eyebrow">${escapeHtml(section.eyebrow)}</div>` : ''}
+          ${section.title ? `<h2 class="feature-title">${escapeHtml(section.title)}</h2>` : ''}
+          ${section.subtitle ? `<p class="feature-subtitle">${escapeHtml(section.subtitle)}</p>` : ''}
+          ${section.copy ? `<p class="feature-copy">${escapeHtml(section.copy)}</p>` : ''}
+          ${renderLinks(section.ctas || section.links)}
+        </div>
+      </div>
+    `;
+
+    const renderSpecs = (specs = []) => {
+      if (!Array.isArray(specs) || !specs.length) return '';
+      return `
+        <div class="mini-specs">
+          ${specs.map(spec => `
+            <div class="spec">
+              <strong>${escapeHtml(spec.title || '')}</strong>
+              <span>${escapeHtml(spec.text || '')}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    };
+
+    const renderProjectTile = (project = {}) => `
+      <article class="tile ${safeTheme(project.theme, 'light')}">
+        <div class="tile-content">
+          ${project.eyebrow ? `<div class="eyebrow">${escapeHtml(project.eyebrow)}</div>` : ''}
+          ${project.title ? `<h3>${escapeHtml(project.title)}</h3>` : ''}
+          ${project.description ? `<p>${escapeHtml(project.description)}</p>` : ''}
+          ${renderLinks(project.links, 'tile-links')}
+        </div>
+      </article>
+    `;
+
+    const renderSecondaryTile = (tile = {}) => renderProjectTile(tile);
+
+    function applyTheme(theme = {}) {
+      const root = document.documentElement;
+      Object.entries(THEME_MAP).forEach(([jsonKey, cssVar]) => {
+        if (theme[jsonKey]) root.style.setProperty(cssVar, theme[jsonKey]);
+      });
+    }
+
+    function setSiteMeta(site = {}) {
+      if (site.title) document.title = site.title;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta && site.metaDescription) meta.setAttribute('content', site.metaDescription);
+      const footer = document.getElementById('footer-root');
+      if (footer && site.footerText) footer.textContent = site.footerText;
+    }
+
+    function renderNav(navigation = {}) {
+      const root = document.getElementById('nav-root');
+      if (!root) return;
+      root.innerHTML = `
+        <a class="brand" href="#top">${escapeHtml(navigation.brand || 'Portfolio')}</a>
+        <div class="nav-links">
+          ${(navigation.links || []).map(link => renderLink(link, '')).join('')}
+        </div>
+      `;
+    }
+
+    function renderHero(hero = {}) {
+      const root = document.getElementById('hero-root');
+      if (!root) return;
+      const headline = Array.isArray(hero.headline)
+        ? hero.headline.map(line => escapeHtml(line)).join('<br />')
+        : escapeHtml(hero.headline || '');
+
+      root.innerHTML = `
+        ${hero.eyebrow ? `<div class="eyebrow">${escapeHtml(hero.eyebrow)}</div>` : ''}
+        ${headline ? `<h1>${headline}</h1>` : ''}
+        ${hero.subhead ? `<p class="hero-subhead">${escapeHtml(hero.subhead)}</p>` : ''}
+        ${hero.copy ? `<p class="hero-copy">${escapeHtml(hero.copy)}</p>` : ''}
+        ${renderLinks(hero.ctas)}
+      `;
+    }
+
+    function renderAbout(about = {}) {
+      const root = document.getElementById('about-root');
+      if (!root) return;
+      root.innerHTML = renderFeatureSection(about, about.id || 'about');
+    }
+
+    function renderWork(work = {}) {
+      const root = document.getElementById('work-root');
+      if (!root) return;
+      const feature = work.feature || {};
+      root.id = work.id || 'work-root';
+      root.innerHTML = `
+        <div class="feature ${safeTheme(feature.theme, 'dark')}">
+          <div class="feature-glow"></div>
+          <div class="feature-content">
+            ${feature.eyebrow ? `<div class="eyebrow">${escapeHtml(feature.eyebrow)}</div>` : ''}
+            ${feature.title ? `<h2 class="feature-title">${escapeHtml(feature.title)}</h2>` : ''}
+            ${feature.subtitle ? `<p class="feature-subtitle">${escapeHtml(feature.subtitle)}</p>` : ''}
+            ${feature.copy ? `<p class="feature-copy">${escapeHtml(feature.copy)}</p>` : ''}
+            ${renderSpecs(feature.specs)}
+          </div>
+        </div>
+        ${(work.projects || []).length ? `<div class="tiles">${work.projects.map(renderProjectTile).join('')}</div>` : ''}
+      `;
+      if (work.id) root.setAttribute('id', work.id);
+    }
+
+    function renderWriting(writing = {}) {
+      const root = document.getElementById('writing-root');
+      if (!root) return;
+      root.innerHTML = renderFeatureSection(writing, writing.id || 'writing');
+    }
+
+    function renderSecondaryTiles(tiles = []) {
+      const root = document.getElementById('secondary-tiles-root');
+      if (!root) return;
+      if (!Array.isArray(tiles) || !tiles.length) {
+        root.innerHTML = '';
+        return;
+      }
+      root.innerHTML = `<div class="tiles">${tiles.map(renderSecondaryTile).join('')}</div>`;
+    }
+
+    function renderContact(contact = {}) {
+      const root = document.getElementById('contact-root');
+      if (!root) return;
+      if (contact.id) root.setAttribute('id', contact.id);
+      root.innerHTML = `
+        <div class="footer-card">
+          ${contact.title ? `<h2>${escapeHtml(contact.title)}</h2>` : ''}
+          ${contact.copy ? `<p>${escapeHtml(contact.copy)}</p>` : ''}
+          ${renderLinks(contact.links, 'contact-links')}
+        </div>
+      `;
+    }
+
+    function renderError(message) {
+      const root = document.getElementById('hero-root');
+      if (!root) return;
+      root.innerHTML = `
+        <div class="status-card">
+          <h2>Couldn’t load content.json</h2>
+          <p>${escapeHtml(message)}</p>
+        </div>
+      `;
+      ['about-root', 'work-root', 'writing-root', 'secondary-tiles-root', 'contact-root'].forEach(id => {
+        const node = document.getElementById(id);
+        if (node) node.innerHTML = '';
+      });
+    }
+
+    async function loadContent() {
+      try {
+        const response = await fetch('./content.json', { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error('Make sure content.json is in the same folder as index.html before publishing to GitHub Pages.');
+        }
+
+        const data = await response.json();
+        applyTheme(data.theme || {});
+        setSiteMeta(data.site || {});
+        renderNav(data.navigation || {});
+        renderHero(data.hero || {});
+        renderAbout(data.about || {});
+        renderWork(data.work || {});
+        renderWriting(data.writing || {});
+        renderSecondaryTiles(data.secondaryTiles || []);
+        renderContact(data.contact || {});
+      } catch (error) {
+        renderError(error.message || 'Unknown error while loading content.');
+      }
+    }
+
+    loadContent();
+  </script>
+</body>
+</html>
