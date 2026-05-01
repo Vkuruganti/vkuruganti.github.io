@@ -4,6 +4,10 @@
     "metaDescription": "Vas Kuruganti builds AI infrastructure, distributed systems, and reliability platforms for production-scale environments.",
     "footerText": "© 2026 Vas Kuruganti. Built for GitHub Pages."
   },
+  "analytics": {
+    "provider": "cloudflare",
+    "cloudflareBeaconToken": ""
+  },
   "theme": {
     "text": "#1d1d1f",
     "muted": "#6e6e73",
@@ -26,6 +30,10 @@
         "href": "#about"
       },
       {
+        "label": "Publications",
+        "href": "./publications/"
+      },
+      {
         "label": "Work",
         "href": "#work"
       },
@@ -42,7 +50,7 @@
   "hero": {
     "eyebrow": "System & Software Architect",
     "headline": [
-      "AI Enginering & Infrastructure.",
+      "AI Engineering & Infrastructure.",
       "AgenticAI and AI development.",
       "Distributed systems.",
       "Reliability at scale."

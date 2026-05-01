@@ -759,6 +759,28 @@
       `;
     }
 
+    // Load Cloudflare analytics only when a token is configured in content.json.
+    function initAnalytics(analytics = {}) {
+      if (analytics.provider !== 'cloudflare') return;
+
+      const token = typeof analytics.cloudflareBeaconToken === 'string'
+        ? analytics.cloudflareBeaconToken.trim()
+        : '';
+
+      if (!token) return;
+
+      const existingScript = document.getElementById('cloudflare-web-analytics');
+      if (existingScript) existingScript.remove();
+
+      const script = document.createElement('script');
+      script.id = 'cloudflare-web-analytics';
+      script.defer = true;
+      script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      script.setAttribute('data-cf-beacon', JSON.stringify({ token }));
+      script.setAttribute('crossorigin', 'anonymous');
+      document.head.appendChild(script);
+    }
+
     function renderError(message) {
       const root = document.getElementById('hero-root');
       if (!root) return;
@@ -789,6 +811,7 @@
 
         applyTheme(data.theme || {});
         setSiteMeta(data.site || {});
+        initAnalytics(data.analytics || {});
         renderNav(data.navigation || {});
         renderHero(data.hero || {});
         renderAbout(data.about || {});
