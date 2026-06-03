@@ -50,10 +50,8 @@
   "hero": {
     "eyebrow": "System & Software Architect",
     "headline": [
-      "AI Engineering & Infrastructure.",
-      "AgenticAI and AI development.",
-      "Distributed systems.",
-      "Reliability at scale."
+      "Designing reliable, scalable, and cost-efficient AI infrastructure for the next generation of intelligent enterprises.",
+      "Where AI meets cloud, reliability, and business impact.",
     ],
     "subhead": "I build the systems that make intelligent systems possible.",
     "copy": "I work across AI development, AgenticAI, AI infrastructure, cloud platforms, site reliability engineering, and software architecture. My focus is simple: build systems that are scalable, observable, resilient, and ready for production.",
