@@ -674,7 +674,11 @@
       if (!root) return;
 
       const headline = Array.isArray(hero.headline)
-        ? hero.headline.map((line) => escapeHtml(line)).join('<br />')
+        ? hero.headline.map((line, index) => `
+            <span class="hero-headline-line${index > 0 ? ' hero-headline-secondary' : ''}">
+              ${escapeHtml(line)}
+            </span>
+          `).join('')
         : escapeHtml(hero.headline || '');
 
       const hasPhoto = hero.photo && hero.photo.src;
