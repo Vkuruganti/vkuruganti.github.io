@@ -110,6 +110,14 @@
           "text": "Observability, triage, autoremediation, and incident reduction."
         },
         {
+          "title": "Software Engineering for the enterprise",
+          "text": "Building scalable, maintainable, and high-impact software systems for complex organizations."
+        },
+        {
+          "title": "GenAI and LLM platforms",
+          "text": "Designing and building platforms for large language models, generative AI workloads, and agentic AI systems."
+        },
+        {
           "title": "Cloud automation",
           "text": "Tooling and workflows that make complex platforms easier to run."
         }
