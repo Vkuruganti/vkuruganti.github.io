@@ -350,6 +350,12 @@
       overflow-wrap: anywhere;
     }
 
+    .tab-link-text:hover {
+      background: var(--white);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
+      transform: translateY(-1px);
+    }
+
     .portfolio-label {
       display: block;
       color: var(--blue);
@@ -749,11 +755,11 @@
       </div>
       <div class="tab-panel">
         <ul class="tab-link-list">
-          <li><span class="tab-link-text"><span class="portfolio-label">Website</span><span class="portfolio-url">https://vkuruganti.github.io/</span></span></li>
-          <li><span class="tab-link-text"><span class="portfolio-label">Hackernoon</span><span class="portfolio-url">https://hackernoon.com/u/kuruganti</span></span></li>
-          <li><span class="tab-link-text"><span class="portfolio-label">Medium</span><span class="portfolio-url">https://medium.com/@vkuruganti</span></span></li>
-          <li><span class="tab-link-text"><span class="portfolio-label">Substack</span><span class="portfolio-url">https://substack.com/@vkuruganti</span></span></li>
-          <li><span class="tab-link-text"><span class="portfolio-label">Github</span><span class="portfolio-url">https://github.com/Vkuruganti</span></span></li>
+          <li><a class="tab-link-text" href="https://vkuruganti.github.io/" target="_blank" rel="noreferrer"><span class="portfolio-label">Website</span><span class="portfolio-url">https://vkuruganti.github.io/</span></a></li>
+          <li><a class="tab-link-text" href="https://hackernoon.com/u/kuruganti" target="_blank" rel="noreferrer"><span class="portfolio-label">Hackernoon</span><span class="portfolio-url">https://hackernoon.com/u/kuruganti</span></a></li>
+          <li><a class="tab-link-text" href="https://medium.com/@vkuruganti" target="_blank" rel="noreferrer"><span class="portfolio-label">Medium</span><span class="portfolio-url">https://medium.com/@vkuruganti</span></a></li>
+          <li><a class="tab-link-text" href="https://substack.com/@vkuruganti" target="_blank" rel="noreferrer"><span class="portfolio-label">Substack</span><span class="portfolio-url">https://substack.com/@vkuruganti</span></a></li>
+          <li><a class="tab-link-text" href="https://github.com/Vkuruganti" target="_blank" rel="noreferrer"><span class="portfolio-label">Github</span><span class="portfolio-url">https://github.com/Vkuruganti</span></a></li>
         </ul>
       </div>
       <div class="feature light" id="about">
@@ -922,10 +928,10 @@
           <ul class="tab-link-list">
             ${tab.links.map((link) => `
               <li>
-                <span class="tab-link-text">
+                <a class="tab-link-text" href="${escapeHtml(link.href || '#')}" target="_blank" rel="noreferrer">
                   <span class="portfolio-label">${escapeHtml(link.label || 'Link')}</span>
                   <span class="portfolio-url">${escapeHtml(link.href || '#')}</span>
-                </span>
+                </a>
               </li>
             `).join('')}
           </ul>
