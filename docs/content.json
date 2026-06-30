@@ -74,6 +74,35 @@
   "about": {
     "id": "about",
     "theme": "light",
+    "tabs": [
+      {
+        "label": "Text",
+        "href": "#about",
+        "active": true,
+        "links": [
+          {
+            "label": "Website",
+            "href": "https://vkuruganti.github.io/"
+          },
+          {
+            "label": "Hackernoon",
+            "href": "https://hackernoon.com/u/kuruganti"
+          },
+          {
+            "label": "Medium",
+            "href": "https://medium.com/@vkuruganti"
+          },
+          {
+            "label": "Substack",
+            "href": "https://substack.com/@vkuruganti"
+          },
+          {
+            "label": "Github",
+            "href": "https://github.com/Vkuruganti"
+          }
+        ]
+      }
+    ],
     "eyebrow": "About",
     "title": "I design systems where software, infrastructure, and intelligence meet.",
     "subtitle": "Over fifteen years, I’ve worked across software engineering, Building and training models from Data, AgenticAI, infrastructure architecture, distributed systems, and reliability engineering.",
