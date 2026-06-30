@@ -296,8 +296,9 @@
       padding: 0 16px;
       border-radius: 999px;
       color: var(--muted);
-      font-size: 0.94rem;
-      font-weight: 600;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
       white-space: nowrap;
     }
 
@@ -313,35 +314,57 @@
     }
 
     .tab-panel {
-      width: min(100%, 760px);
+      width: min(100%, 880px);
       margin: 0 auto 14px;
-      padding: 18px;
+      padding: 20px;
       border: 1px solid var(--border);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(0, 113, 227, 0.09), transparent 34%),
+        rgba(255, 255, 255, 0.86);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.07);
       backdrop-filter: blur(16px);
     }
 
     .tab-link-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      gap: 12px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
     .tab-link-text {
-      display: block;
-      min-height: 44px;
-      padding: 10px 12px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 82px;
+      padding: 16px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.78);
       color: var(--text);
-      font-size: 0.94rem;
-      line-height: 1.35;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.045);
+      line-height: 1.4;
       overflow-wrap: anywhere;
+    }
+
+    .portfolio-label {
+      display: block;
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-url {
+      display: block;
+      margin-top: 6px;
+      color: var(--text);
+      font-size: 0.98rem;
+      font-weight: 500;
     }
 
     .feature {
@@ -722,15 +745,15 @@
 
     <section class="section container" id="about-root">
       <div class="section-tabs" aria-label="About tabs">
-        <a class="section-tab active" href="#about" aria-current="page">Text</a>
+        <a class="section-tab active" href="#about" aria-current="page">Portfolio</a>
       </div>
       <div class="tab-panel">
         <ul class="tab-link-list">
-          <li><span class="tab-link-text">Website: https://vkuruganti.github.io/</span></li>
-          <li><span class="tab-link-text">Hackernoon: https://hackernoon.com/u/kuruganti</span></li>
-          <li><span class="tab-link-text">Medium: https://medium.com/@vkuruganti</span></li>
-          <li><span class="tab-link-text">Substack: https://substack.com/@vkuruganti</span></li>
-          <li><span class="tab-link-text">Github: https://github.com/Vkuruganti</span></li>
+          <li><span class="tab-link-text"><span class="portfolio-label">Website</span><span class="portfolio-url">https://vkuruganti.github.io/</span></span></li>
+          <li><span class="tab-link-text"><span class="portfolio-label">Hackernoon</span><span class="portfolio-url">https://hackernoon.com/u/kuruganti</span></span></li>
+          <li><span class="tab-link-text"><span class="portfolio-label">Medium</span><span class="portfolio-url">https://medium.com/@vkuruganti</span></span></li>
+          <li><span class="tab-link-text"><span class="portfolio-label">Substack</span><span class="portfolio-url">https://substack.com/@vkuruganti</span></span></li>
+          <li><span class="tab-link-text"><span class="portfolio-label">Github</span><span class="portfolio-url">https://github.com/Vkuruganti</span></span></li>
         </ul>
       </div>
       <div class="feature light" id="about">
@@ -900,7 +923,8 @@
             ${tab.links.map((link) => `
               <li>
                 <span class="tab-link-text">
-                  ${escapeHtml(link.label || 'Link')}: ${escapeHtml(link.href || '#')}
+                  <span class="portfolio-label">${escapeHtml(link.label || 'Link')}</span>
+                  <span class="portfolio-url">${escapeHtml(link.href || '#')}</span>
                 </span>
               </li>
             `).join('')}

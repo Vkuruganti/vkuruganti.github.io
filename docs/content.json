@@ -76,7 +76,7 @@
     "theme": "light",
     "tabs": [
       {
-        "label": "Text",
+        "label": "Portfolio",
         "href": "#about",
         "active": true,
         "links": [
